@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    background: #1e1e1e;
+    color: #F0FFFFFF;
+    overflow: auto;
+}
+
+header {
+    height: 120px;
+}
+
+nav {
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: 5px;
+    width: 100%;
+}
+
+h1 {
+    padding: 5px 0;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.home {
+    height: calc(100vh - 120px);
+    width: 70%;
+    margin: auto;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    height: 100%;
+    gap: 15px;
+}
+
+.instagramo {
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+article {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.card {
+    width: min(100%, 600px) ;
+    height: min(100%, 500px);
+    background-color: rgb(35, 35, 35);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.40);
+    border-radius: 6px;
+    padding: 20px 15px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 6px;
+    height: 400px;
+    object-fit:cover;
+    object-position: center;
+}
+
+.card h3 {
+    text-align: center;
+}
+
+.btn {
+    height: 40px;
+    background: #474747;
+    color: #fafafa;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background: #fafafa;
+    color: #474747;
+    transition: color 0.3s ease;
+}
+
+.d-none {
+    display: none;
+}
+
+.enunciado {
+    width: 100%;
+    height: 80%;
+    border: none;
+}
+
+a {
+    text-decoration: none;
+    color: #d3b2ec;
+    transition: color 0.2s ease;
+    cursor: pointer;
+}
+
+a:hover, a.active {
+    color: #d457e8;
+}
+
+form {
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px
+}
+
+input {
+    width: 250px;
+    height: 30px;
+    padding: 5px;
+    font-size: 14px;
+    border: none;
+    border-radius: 6px;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(190, 78, 250, 1);
+}
+
+input[type="file"] {
+    padding: 0;
+}
