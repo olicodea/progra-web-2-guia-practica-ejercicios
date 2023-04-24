@@ -11,15 +11,6 @@ function crearMatrizCuadrada($dimension) {
     return $matrix;
 }
 
-if(isset($_POST["dimension"]) && $_POST["dimension"] > 0) {
-    $matriz = crearMatrizCuadrada($_POST["dimension"]);
-
-    echo "<pre>";
-    print_r($matriz);
-    echo "</pre>";
-}
-
-
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -43,6 +34,39 @@ include_once "../header.php";
             <input type="number" name="dimension" id="dimension" placeholder="Dimensión de la matriz..">
             <input type="submit" value="GUARDAR" class="btn">
         </form>
+        <article class="card card-respuestas">
+            <?php
+            if(isset($_POST["dimension"]) && $_POST["dimension"] > 0) {
+                $matriz = crearMatrizCuadrada($_POST["dimension"]);
+
+                echo "<div>";
+                echo "<p>Respuesta a: </p> <br>";
+                for($i=0; $i < count($matriz); $i++) {
+                    echo $matriz[$i][$i] . "<br>";
+                }
+                echo "</div>";
+
+                echo "<div>";
+                echo "<p>Respuesta b: </p> <br>";
+                for($i=0; $i < $_POST["dimension"]; $i++) {
+                    $fila_al_reves = array_reverse($matriz[$i]);
+                    echo $fila_al_reves[$i] . "<br>";
+                }
+                echo "</div>";
+
+                echo "<div>";
+                echo "<p>Respuesta c: </p> <br>";
+                $suma = 0;
+                for($i=0; $i < $_POST["dimension"]; $i++) {
+                    for($j = 0; $j < $_POST["dimension"]; $j++) {
+                        $suma += $matriz[$i][$j];
+                    }
+                }
+                echo "La suma de los valores es: <br> $suma";
+                echo "</div>";
+            }
+            ?>
+        </article>
     </section>
 </main>
 </body>

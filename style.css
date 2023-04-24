@@ -82,6 +82,12 @@ article {
     padding: 20px 15px;
 }
 
+.card-respuestas {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
 .card img {
     width: 100%;
     border-radius: 6px;
