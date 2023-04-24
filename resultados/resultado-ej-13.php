@@ -47,11 +47,11 @@ include_once "../header.php";
             echo "<p>El texto en el que se buscara es: $texto</p>";
             ?>
         </article>
-        <?php
-        echo "<article class='card'>";
-        echo "La palabra `$palabra` aparece: " . buscarPalabra($palabra, $texto) . " veces.";
-        echo "</article>";
-        ?>
+            <?php
+            echo "<article class='card'>";
+            echo "La palabra `$palabra` aparece: " . buscarPalabra($palabra, $texto) . " veces.";
+            echo "</article>";
+            ?>
     </section>
 </main>
 </body>
