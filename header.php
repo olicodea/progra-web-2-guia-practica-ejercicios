@@ -28,7 +28,7 @@
         foreach (getEjercicios() as $index => $ejercicio) {
             $num_archivo = $index - 1;
             $num_ejercicio = $index < 8 ? ($index - 1) : ($index + 1);
-            echo "<li><a href='" . armarUrl() . "/resultado-ej-$num_archivo.php'" . " class='" . chequearActive($ejercicio) . "'>Ejercicio $num_ejercicio</a></li>";
+            echo "<li><a href='" . armarUrl() . "/resultado-ej-$num_archivo.php'>Ejercicio $num_ejercicio</a></li>";
         }
     }
 ?>

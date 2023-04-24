@@ -140,7 +140,7 @@ form {
     gap: 20px
 }
 
-input {
+input, select {
     width: 250px;
     height: 30px;
     padding: 5px;
@@ -149,11 +149,29 @@ input {
     border-radius: 6px;
 }
 
-input:focus {
+input[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+}
+
+.form-checkbox {
+    display: flex;
+    width: 150px;
+    justify-content: space-between;
+}
+
+input:focus, select:focus {
     outline: none;
     box-shadow: 0 0 8px rgba(190, 78, 250, 1);
 }
 
 input[type="file"] {
     padding: 0;
+}
+
+.formGroup {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
