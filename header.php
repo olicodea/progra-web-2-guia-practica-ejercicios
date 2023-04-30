@@ -2,22 +2,16 @@
     $HOME = "index.php";
     function armarUrl() {
         $nombre_archivo = basename($_SERVER['PHP_SELF']);
+
         if($nombre_archivo == "index.php") {
-            return "resultados";
+            return "ejercicios";
         }
+
         if($nombre_archivo == "insta-img.php") {
-            return '../../../resultados';
+            return "../..";
         }
 
-        return ".";
-    }
-
-    function getEjercicios() {
-        $path = (basename($_SERVER["PHP_SELF"]) == "insta-img.php") ? ("../../resultados") : armarUrl();
-        // Filtra los elementos que no sean carpetas, por ende son archivos
-        return array_filter(scandir($path), function ($archivo) use ($path) {
-            return !is_dir($path . "/" . $archivo);
-        });
+        return "../../ejercicios";
     }
 
     function chequearActive($ejercicio) {
@@ -25,10 +19,10 @@
     }
 
     function imprimirEjercicios() {
-        foreach (getEjercicios() as $index => $ejercicio) {
-            $num_archivo = $index - 1;
-            $num_ejercicio = $index < 8 ? ($index - 1) : ($index + 1);
-            echo "<li><a href='" . armarUrl() . "/resultado-ej-$num_archivo.php'>Ejercicio $num_ejercicio</a></li>";
+        for($i = 1; $i <= 18; $i++) {
+            if($i <= 6 || $i >= 9) {
+                echo "<li><a href='" . armarUrl() . "/ejercicio $i/resultado-ej-$i.php'>Ejercicio $i</a></li>";
+            }
         }
     }
 ?>
@@ -38,7 +32,7 @@
     <nav>
         <ul>
             <li>
-                <a href="<?= basename($_SERVER['PHP_SELF']) == "index.php" ? "" : (basename($_SERVER["PHP_SELF"]) == "insta-img.php" ? "../../../" : "../") ?>index.php" class="<?= chequearActive($HOME) ?>">
+                <a href="<?= basename($_SERVER['PHP_SELF']) == "index.php" ? "" : "../../"?>index.php" class="<?= chequearActive($HOME) ?>">
                     Home
                 </a>
             </li>
